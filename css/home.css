@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eaeaea;
+    min-height: 100vh;
+    color: #eaeaea;
+}
+.top-header-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00b4d8;
+    color: #eaeaea;
+    height: 3rem;
+}
+.text-top {
+    text-align: center;
+    font-family: "Work Sans Variable", sans-serif;
+    font-weight: 400;
+    margin: 0.5rem;
+    padding-right: 2rem;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eaeaea;
+    padding: 1rem 3rem 0 3rem;
+}
+.logo {
+    width: 200px;
+}
+.viewHome {
+    border-style: none;
+    background: transparent;
+    cursor: pointer;
+}
+.viewServices {
+    border-style: none;
+    background: transparent;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+li {
+    font-family: "Work Sans Variable", sans-serif;
+    color: #03045e;
+    list-style: none;
+    font-size: 14px;
+    margin: 2rem;
+    cursor: pointer;
+    border-style: none;
+}
+
+.text-services {
+    font-style: oblique;
+    font-size: 19px;
+    color: #03045e;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.services-btn {
+    font-family: "Work Sans Variable", sans-serif;
+    font-weight: 500;
+    background: #00b4d8;
+    color: #eaeaea;
+    width: 150px;
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: transform 0.2s ease;
+}
+.services-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-home {
+    font-family: "Work Sans Variable", sans-serif;
+    font-weight: 500;
+    background: #00b4d8;
+    color: #eaeaea;
+    width: 150px;
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.services-btn-more {
+    display: block;
+    margin: 0 auto;
+    font-family: "Work Sans Variable", sans-serif;
+    font-weight: 500;
+    background: #00b4d8;
+    color: #eaeaea;
+    width: 150px;
+    height: 50px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.services-btn-more:hover {
+    transform: scale(1.1);
+}
+.section-one,
+.section-three {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edf6f9;
+    width: 100%;
+    height: 400px;
+    margin: 2rem 0;
+    color: #03045e;
+}
+
+.section-two {
+    height: 600px;
+}
+.img-one img,
+.img-three img {
+    height: 430px;
+    object-fit: cover;
+}
+.text-one,
+.text-three {
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.text-three {
+    padding: 5rem;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.location svg {
+    margin-right: 5px;
+}
+
+h2 {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 1rem;
+    color: #03045e;
+}
+
+h3 {
+    font-size: 18px;
+    font-style: oblique;
+    font-weight: 100;
+    padding: 0rem 5rem;
+    text-align: justify;
+    color: #03045e;
+}
+
+.title-services {
+    font-size: 40px;
+    font-weight: 600;
+    padding: 3rem;
+    text-align: center;
+    color: #03045e;
+}
+
+/*Card servicios home*/
+.container-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card {
+    background-color: #edf6f9;
+    border: 1px solid #03045e;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px #888888;
+    margin-bottom: 3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.message-section {
+    font-size: 25px;
+    font-weight: 100;
+    color: #03045e;
+    text-align: center;
+    font-style: oblique;
+    width: 100%;
+    padding: 4rem;
+}
+
+/*footer*/
+footer {
+    background-color: #03045e;
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-around;
+}

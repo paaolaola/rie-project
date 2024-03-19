@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RIE - Clinica Dental</title>
+        <link rel="icon" type="image/svg+xml" href="./public/img/favicon.png" />
+        <link rel="stylesheet" href="css/form.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <section class="container-form">
+            <div class="box-form col-5">
+                <img class="logoForm" src="./public/img/logo.png" alt="rie logo" />
+                <p class="title-services">REGÍSTRATE</p>
+                <form id="registForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="name" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" />
+                        <div id="email" class="form-text">Nunca compartiremos tu correo electrónico con nadie.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="emailHelp" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="password" />
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mb-4">Registrarme</button>
+                    </div>
+                </form>
+                <p>Ya tienes una cuenta? <a href="index.html">Inicia sesión</a>.</p>
+                <span class="message-form" id="message-form"></span>
+            </div>
+        </section>
+        <script src="./js/registro.js"></script>
+    </body>
+</html>

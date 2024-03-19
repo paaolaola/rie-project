@@ -1,0 +1,37 @@
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s ease;
+    min-height: 100vh;
+}
+
+.title-services {
+    font-size: 40px;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: center;
+    color: #00b4d8;
+}
+
+.container-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 3rem;
+}
+.box-form {
+    background-color: rgba(234, 234, 234, 0.7);
+    margin: auto;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+}
+
+.logoForm {
+    width: 180px;
+}
+
+.message-form {
+    color: tomato;
+}
