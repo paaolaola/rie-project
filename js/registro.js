@@ -28,7 +28,7 @@ const backgrounds = ["02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
 function changeBackground() {
     let random = Math.floor(Math.random() * backgrounds.length);
-    document.body.style.backgroundImage = `url('../public/img/${backgrounds[random]}')`;
+    document.body.style.backgroundImage = `url('./public/img/${backgrounds[random]}')`;
 }
 /*para manipular cambio de fondo cada 5 segundos*/
 window.onload = function () {
