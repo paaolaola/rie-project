@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Endodoncia",
+        "price": 90990,
+        "img": "https://images.pexels.com/photos/13207299/pexels-photo-13207299.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "detail": "Protege tus piezas dentales dañadas y prevenir la pérdida. El procedimiento consiste en extraer la pulpa dental y la cavidad resultante, con lo que se rellena y sella con material inerte y biocompatible."
+    },
+    {
+        "id": 2,
+        "name": "Ortodoncia",
+        "price": 60990,
+        "img": "https://images.pexels.com/photos/6528866/pexels-photo-6528866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "detail": "Corrige desviaciones, apiñamiento, diastemas (espacios entre los dientes), forma de arcadas dentales o problemas de mordida."
+    },
+    {
+        "id": 3,
+        "name": "Implantología",
+        "price": 140990,
+        "img": "https://images.pexels.com/photos/6627281/pexels-photo-6627281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "detail": "Si quieres recuperar una bonita sonrisa, tener unos dientes cuidados y sentirte mejor contigo mismo, el implante es una excelente opción y muy frecuente en la estética dental."
+    },
+    {
+        "id": 4,
+        "name": "Periodoncia",
+        "price": 40990,
+        "img": "https://images.pexels.com/photos/4270094/pexels-photo-4270094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "detail": "Prevención, diagnóstico y tratamiento de las inflamaciones de la encía y del ligamento periodontal."
+    },
+    {
+        "id": 5,
+        "name": "Prótesis",
+        "price": 220990,
+        "img": "https://media.istockphoto.com/id/611901096/es/foto/pr%C3%B3tesis-dentales-pr%C3%B3tesis-pr%C3%B3tesis-de-trabajo.jpg?s=612x612&w=0&k=20&c=_601MvqWuShU9mfYW6Mp6kiWqzbIBr7Axsi_5I3eUqA=",
+        "detail": "Estructura fija que se atornilla sobre los implantes dentales previamente establecidos. El paciente vuelve a disfrutar de los dientes, así como de las encías perdidas."
+    },
+    {
+        "id": 6,
+        "name": "Cirugía Maxilofacial",
+        "price": 240990,
+        "img": "https://images.pexels.com/photos/4421494/pexels-photo-4421494.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "detail": "Trata procesos patológicos que afectan la estructura facial, como las extracciones de muelas del juicio o extirpación de quistes o tumores."
+    },
+    {
+        "id": 7,
+        "name": "Rehabilitación Oral",
+        "price": 199990,
+        "img": "https://images.pexels.com/photos/12148417/pexels-photo-12148417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "detail": "Tratamiento de restauración dental que se realiza cuando se han perdido piezas dentarias por caries, traumatismos, fracturas o por enfermedades periodontales."
+    },
+    {
+        "id": 8,
+        "name": "Blanqueamiento Dental",
+        "price": 70990,
+        "img": "https://media.istockphoto.com/id/1321760897/es/foto/una-mujer-en-la-cita-para-blanquear-los-dientes-de-un-dentista.jpg?s=612x612&w=0&k=20&c=GVaTlURWoRIYXNI4BYHRGB9Ujux0lJCvFUn3fXkpNbQ=",
+        "detail": "Procedimiento para aclarar el color de los dientes mediante el uso de agentes químicos que actúan sobre la superficie de éstos. Otorga un aspecto más limpio y claro a la sonrisa."
+    },
+    {
+        "id": 9,
+        "name": "Exodoncia",
+        "price": 60990,
+        "img": "https://dracarolinaflorez.com/wp-content/uploads/2019/09/Exodoncia-Tratamientos-dentales-Colombia.jpg",
+        "detail": "Extracción de un diente dañado o que presenta problemas para la salud bucodental."
+    }
+]
