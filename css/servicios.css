@@ -1,3 +1,4 @@
+/*estilos generales*/
 * {
     padding: 0;
     margin: 0;
@@ -7,8 +8,18 @@
 body {
     background-color: #eaeaea;
     min-height: 100vh;
+    color: #eaeaea;
+}
+h3 {
+    font-size: 18px;
+    font-style: oblique;
+    font-weight: 100;
+    padding: 0rem 5rem;
+    text-align: justify;
     color: #03045e;
 }
+
+/*top bar*/
 .top-header-area {
     display: flex;
     align-items: center;
@@ -19,117 +30,14 @@ body {
 }
 .text-top {
     font-size: 16px;
-}
-.navbar input.form-control {
-    width: 300px;
-}
-.viewHome {
-    border-style: none;
-    background: transparent;
-}
-.viewServices {
-    border-style: none;
-    background: transparent;
-}
-.btn-home {
-    font-size: 14px;
-}
-
-.section-two {
-    background-color: #edf6f9;
-}
-.container-card {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1rem 3rem;
-}
-.card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 300px;
-    margin: 1rem;
-}
-
-.card:hover {
-    transform: scale(1.1);
-}
-.card img {
-    width: 300px;
-    object-fit: cover;
-}
-.detail-service {
-    font-size: 12px;
-    text-align: justify;
-    margin: 1rem 1.5rem;
-}
-.btn-services {
-    font-family: "Work Sans Variable", sans-serif;
-    font-weight: 500;
-    background: #00b4d8;
-    color: #eaeaea;
-    width: 150px;
-    height: 40px;
-    border-style: none;
-    border-radius: 5px;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.cart-container {
-    min-height: 50vh;
-}
-.cart-box .list-group {
-    margin: 1rem;
-}
-
-.list-group {
-    width: 200px;
-    margin-right: 1rem;
-    list-style: none;
-}
-.list-service {
-    width: 400px;
-}
-
-.name-service {
-    margin-top: 1rem;
-}
-.btn-finalize {
-    font-family: "Work Sans Variable", sans-serif;
-    font-weight: 500;
-    background: #00b4d8;
-    color: #eaeaea;
-    width: 150px;
-    height: 40px;
-    border-style: none;
-    border-radius: 5px;
-    text-align: center;
-    margin: 0 1rem 2rem 0;
-    transition: transform 0.2s ease;
-}
-.btn-finalize:hover {
-    transform: scale(1.1);
-}
-
-/*acomodar*/
-
-.top-header-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #00b4d8;
-    color: #eaeaea;
-    height: 3rem;
-}
-.text-top {
     text-align: center;
     font-family: "Work Sans Variable", sans-serif;
     font-weight: 400;
     margin: 0.5rem;
     padding-right: 2rem;
 }
+
+/*navbar*/
 nav {
     display: flex;
     align-items: center;
@@ -137,6 +45,7 @@ nav {
     background-color: #eaeaea;
     padding: 1rem 3rem 0 3rem;
 }
+
 .logo {
     width: 200px;
 }
@@ -155,8 +64,18 @@ nav {
     cursor: pointer;
     border-style: none;
 }
+.viewHome {
+    border-style: none;
+    background: transparent;
+}
+.viewServices {
+    border-style: none;
+    background: transparent;
+}
+
 .services-btn {
     font-family: "Work Sans Variable", sans-serif;
+    font-size: 14px;
     font-weight: 500;
     background: #00b4d8;
     color: #eaeaea;
@@ -165,90 +84,80 @@ nav {
     border-style: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 2rem;
+    transition: transform 0.2s ease;
+}
+.services-btn:hover {
+    transform: scale(1.1);
 }
 
-.btn-home {
-    font-family: "Work Sans Variable", sans-serif;
-    font-weight: 500;
-    background: #00b4d8;
-    color: #eaeaea;
-    width: 150px;
-    height: 50px;
-    border-style: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.services-btn-more {
-    display: block;
-    margin: 0 auto;
-    font-family: "Work Sans Variable", sans-serif;
-    font-weight: 500;
-    background: #00b4d8;
-    color: #eaeaea;
-    width: 150px;
-    height: 50px;
-    border-style: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-}
-.section-one,
-.section-three {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #edf6f9;
-    width: 100%;
-    height: 400px;
-    margin: 2rem 0;
-    color: #03045e;
+/*sección uno*/
+.navbar input.form-control {
+    width: 300px;
 }
 
+/*sección dos*/
 .section-two {
+    background-color: #edf6f9;
     min-height: 600px;
 }
-.img-one img,
-.img-three img {
-    height: 430px;
+/*card servicios home*/
+.container-card {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 1rem 3rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column; /* Alinear el contenido verticalmente */
+    justify-content: space-between; /* Espaciar el contenido verticalmente */
+    align-items: center;
+    width: 300px;
+    margin: 1.5rem;
+    background-color: #edf6f9;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px #888888;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
     object-fit: cover;
 }
-.text-one,
-.text-three {
-    text-align: center;
-    padding-bottom: 3rem;
-}
 
-.text-three {
-    padding: 5rem;
+.name-service {
+    margin-top: 1rem;
 }
-
-.location {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.location svg {
-    margin-right: 5px;
-}
-
-h2 {
-    font-size: 15px;
-    font-weight: 500;
-    padding: 1rem;
-    color: #03045e;
-}
-
-h3 {
-    font-size: 18px;
-    font-style: oblique;
-    font-weight: 100;
-    padding: 0rem 5rem;
+.detail-service {
+    font-size: 12px;
     text-align: justify;
-    color: #03045e;
+    margin: 1rem 1.5rem;
+}
+.btn-services {
+    font-family: "Work Sans Variable", sans-serif;
+    font-weight: 500;
+    background: #00b4d8;
+    color: #eaeaea;
+    width: 150px;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: transform 0.2s ease;
+}
+.btn-services:hover {
+    transform: scale(1.1);
 }
 
+/*sección tres*/
+.cart-container {
+    min-height: 50vh;
+}
 .title-services {
     font-size: 40px;
     font-weight: 600;
@@ -256,41 +165,33 @@ h3 {
     text-align: center;
     color: #03045e;
 }
-
-/*Card servicios home*/
-.container-card {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.cart-box .list-group {
+    margin: 1rem;
+}
+.list-group {
+    width: 200px;
+    margin-right: 1rem;
+    list-style: none;
+}
+.list-service {
+    width: 400px;
 }
 
-.card {
-    background-color: #edf6f9;
-    border: 1px solid #03045e;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 1px 2px 3px #888888;
-    margin-bottom: 3rem;
+.btn-finalize {
+    font-family: "Work Sans Variable", sans-serif;
+    font-weight: 500;
+    background: #00b4d8;
+    color: #eaeaea;
+    width: 150px;
+    height: 40px;
+    border-style: none;
+    border-radius: 5px;
     text-align: center;
-    cursor: pointer;
+    margin: 0 1rem 2rem 0;
     transition: transform 0.2s ease;
 }
-.card img {
-    width: 350px;
-    height: 250px;
-    object-fit: cover;
-}
-.card:hover {
+.btn-finalize:hover {
     transform: scale(1.1);
-}
-.message-section {
-    font-size: 25px;
-    font-weight: 100;
-    color: #03045e;
-    text-align: center;
-    font-style: oblique;
-    width: 100%;
-    padding: 4rem;
 }
 
 /*footer*/

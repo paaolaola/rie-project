@@ -20,9 +20,9 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
 
     /*validación de los inputs*/
     if (user === "" && pass === "") {
-        document.getElementById("message-form").innerHTML = "Por favor, introduce tu usuario y contraseña.";
+        document.getElementById("message-error").innerHTML = "Por favor, introduce tu usuario y contraseña.";
     } else if (user === "" || pass === "") {
-        document.getElementById("message-form").innerHTML = "Por favor, completa los campos.";
+        document.getElementById("message-error").innerHTML = "Por favor, completa los campos.";
     } else {
         /*verifico si se puede iniciar sesión*/
         if (checkLogin(user, pass)) {
@@ -41,7 +41,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
                 localStorage.removeItem("password");
             }
         } else {
-            document.getElementById("message-form").innerHTML = "Nombre de usuario o contraseña incorrectos.";
+            document.getElementById("message-error").innerHTML = "Nombre de usuario o contraseña incorrectos.";
         }
     }
 });

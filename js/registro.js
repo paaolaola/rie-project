@@ -47,7 +47,7 @@ document.getElementById("registForm").addEventListener("submit", function (e) {
 
     /*validación de los inputs*/
     if (user === "" || pass === "" || name === "" || email === "") {
-        document.getElementById("message-form").innerHTML = "Por favor, completa todos los campos.";
+        document.getElementById("message-error").innerHTML = "Por favor, completa todos los campos.";
     } else {
         /*validación caracteres pass*/
         var isUpperCase = false;
@@ -66,11 +66,11 @@ document.getElementById("registForm").addEventListener("submit", function (e) {
         });
 
         if (pass.length <= 6 || !isUpperCase || !isNumber) {
-            document.getElementById("message-form").innerHTML = "La contraseña debe tener 6 o más caracteres, al menos una mayúscula y un número.";
+            document.getElementById("message-error").innerHTML = "La contraseña debe tener 6 o más caracteres, al menos una mayúscula y un número.";
         } else {
             // ver si el usuario se registró
             if (localStorage.getItem(user) !== null) {
-                document.getElementById("message-form").innerHTML = "El nombre de usuario ya está en uso.";
+                document.getElementById("message-error").innerHTML = "El nombre de usuario ya está en uso.";
             } else {
                 document.getElementById("message-form").innerHTML = "¡Registro exitoso!";
                 /*redirijo al login*/

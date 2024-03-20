@@ -1,6 +1,6 @@
+/*estilos del login y registro*/
 body {
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
     transition: background-image 0.5s ease;
     min-height: 100vh;
@@ -32,6 +32,9 @@ body {
     width: 180px;
 }
 
-.message-form {
+.message-error {
     color: tomato;
+}
+.message-form {
+    color: green;
 }
