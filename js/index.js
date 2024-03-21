@@ -26,9 +26,17 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     } else {
         /*verifico si se puede iniciar sesión*/
         if (checkLogin(user, pass)) {
-            document.getElementById("message-form").innerHTML = "¡Inicio de sesión exitoso!";
-            /*redirijo al home*/
-            window.location.href = "home.html";
+            Swal.fire({
+                title: "¡Inicio de sesión exitoso!",
+                icon: "success",
+                confirmButtonColor: "#00b4d8",
+                confirmButtonText: "OK",
+            });
+
+            /* settime para redirir al home */
+            setTimeout(function () {
+                window.location.href = "home.html";
+            }, 1000);
 
             /*para recordar la contraseña*/
             if (check.checked) {

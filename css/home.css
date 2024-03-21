@@ -144,7 +144,7 @@ nav {
 
 /*sección uno*/
 .location svg {
-    margin-right: 5px;
+    margin-right: 1rem;
 }
 
 /*sección dos*/
@@ -308,7 +308,7 @@ footer {
 }
 @media screen and (min-width: 280px) and (max-width: 768px) {
     h1 {
-        font-size: 18px;
+        font-size: 15px;
     }
     h3 {
         padding: 1rem;
@@ -362,6 +362,9 @@ footer {
     }
     .location {
         margin-top: 2rem;
+    }
+    .location svg {
+        margin: 0 5px 10px 0;
     }
     .services-btn-more {
         margin: 1rem auto;

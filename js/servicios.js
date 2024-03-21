@@ -212,7 +212,7 @@ finishBtn.addEventListener("click", () => {
         });
     } else {
         Swal.fire({
-            title: "¡Compra finalizada!",
+            title: "¡Serás redirigido al pago!",
             icon: "success",
             confirmButtonColor: "#00b4d8",
             confirmButtonText: "OK",

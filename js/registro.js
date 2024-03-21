@@ -72,9 +72,17 @@ document.getElementById("registForm").addEventListener("submit", function (e) {
             if (localStorage.getItem(user) !== null) {
                 document.getElementById("message-error").innerHTML = "El nombre de usuario ya está en uso.";
             } else {
-                document.getElementById("message-form").innerHTML = "¡Registro exitoso!";
-                /*redirijo al login*/
-                window.location.href = "index.html";
+                Swal.fire({
+                    title: "¡Registro exitoso!",
+                    icon: "success",
+                    confirmButtonColor: "#00b4d8",
+                    confirmButtonText: "OK",
+                });
+
+                /* settime para redirir al index */
+                setTimeout(function () {
+                    window.location.href = "index.html";
+                }, 1000);
 
                 /*guardo datos en localStorage*/
                 localStorage.setItem(user, pass);
