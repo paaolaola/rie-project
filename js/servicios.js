@@ -1,5 +1,4 @@
 /*interacción de las vistas*/
-
 document.addEventListener("DOMContentLoaded", function () {
     let viewLogin = document.querySelectorAll(".viewLogin");
     let viewServices = document.querySelectorAll(".viewServices");
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// /*array de servicios*/
+// /*array de servicios comentado por uso del json*/
 // const arrServices = [
 //     {
 //         id: 1,
@@ -189,8 +188,9 @@ function addToCart(service) {
         text: "Agregado al carro!",
         duration: 3000,
         gravity: "top",
-        backgroundColor: "linear-gradient(to right, #eaeaea, #00b4d8)",
+
         style: {
+            background: "linear-gradient(to right, #eaeaea, #00b4d8)",
             color: "#03045e",
             borderRadius: "10px",
             border: "1px solid #03045e",
@@ -202,12 +202,21 @@ function addToCart(service) {
 /*evento del botón "finalizar compra"*/
 const finishBtn = document.getElementById("checkoutButton");
 finishBtn.addEventListener("click", () => {
-    const messageCart = document.querySelector(".message-cart");
-
     if (cart.length === 0) {
-        messageCart.innerHTML = `<h3>Tu carro de compras está vacío.</h3>`;
+        /*sweetalert para aviso de carro vacío o compra finalizada*/
+        Swal.fire({
+            title: "¡Tu carro de compras está vacío!",
+            icon: "warning",
+            confirmButtonColor: "#00b4d8",
+            confirmButtonText: "OK",
+        });
     } else {
-        messageCart.innerHTML = `<h3>Compra finalizada.</h3>`;
+        Swal.fire({
+            title: "¡Compra finalizada!",
+            icon: "success",
+            confirmButtonColor: "#00b4d8",
+            confirmButtonText: "OK",
+        });
     }
 
     cart.length = 0;
@@ -217,12 +226,21 @@ finishBtn.addEventListener("click", () => {
 /*evento del botón "borrar carrito"*/
 const removeBtn = document.getElementById("btnRemove");
 removeBtn.addEventListener("click", () => {
-    const messageCart = document.querySelector(".message-cart");
-
     if (cart.length >= 1) {
-        messageCart.innerHTML = `<h3>Tu carro de compras ha sido eliminado.</h3>`;
+        /*sweetalert para aviso de carro vacío o servicios eliminados*/
+        Swal.fire({
+            title: "¡Tu carro de compras ha sido eliminado!",
+            icon: "success",
+            confirmButtonColor: "#00b4d8",
+            confirmButtonText: "OK",
+        });
     } else {
-        messageCart.innerHTML = `<h3>Tu carro de compras está vacío.</h3>`;
+        Swal.fire({
+            title: "¡Tu carro de compras está vacío!",
+            icon: "warning",
+            confirmButtonColor: "#00b4d8",
+            confirmButtonText: "OK",
+        });
     }
 
     cart.length = 0;
