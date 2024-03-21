@@ -2,7 +2,9 @@
   "dependencies": {
     "@fontsource-variable/work-sans": "^5.0.18",
     "@fontsource/fredoka-one": "^5.0.5",
+    "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "sweetalert2": "^11.10.6",
     "toastify-js": "^1.12.0"
   }
 }

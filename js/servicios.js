@@ -109,13 +109,13 @@ getData(API_URL);
 function showServices(services) {
     const servicesDom = services
         .map(
-            ({ id, name, price, img, detail }) => `
+            ({ name, price, img, detail }) => `
             <div class="card">
                 <img src="${img}" alt="${name}" />
                 <h5 class="name-service">${name}</h5>
                 <p>Desde: $${price}</p>
                 <p class="detail-service">${detail}</p>
-                <button id=${id} class="btn-services">Agregar</button>
+                <button id="add-btn" class="btn-services">Agregar</button>
             </div>
         `
         )
@@ -184,7 +184,18 @@ function addToCart(service) {
         /*o lo agrega*/
         cart.push({ ...service, quantity: 1 });
     }
-
+    /*toastify para el boton agregar*/
+    Toastify({
+        text: "Agregado al carro!",
+        duration: 3000,
+        gravity: "top",
+        backgroundColor: "linear-gradient(to right, #eaeaea, #00b4d8)",
+        style: {
+            color: "#03045e",
+            borderRadius: "10px",
+            border: "1px solid #03045e",
+        },
+    }).showToast();
     updateCart();
 }
 
