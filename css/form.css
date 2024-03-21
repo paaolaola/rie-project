@@ -18,14 +18,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 3rem;
+    min-height: 100vh;
+    margin: 1rem;
 }
+
 .box-form {
     background-color: rgba(234, 234, 234, 0.7);
-    margin: auto;
     padding: 2rem 3rem;
     border-radius: 15px;
+    width: 50%;
 }
 
 .logoForm {
@@ -37,4 +38,31 @@ body {
 }
 .message-form {
     color: green;
+}
+
+/*responsive*/
+@media screen and (min-width: 996px) and (max-width: 1080px) {
+    .title-services {
+        font-size: 30px;
+    }
+    .box-form {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 996px) {
+    .title-services {
+        font-size: 30px;
+    }
+    .box-form {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 280px) and (max-width: 768px) {
+    .title-services {
+        font-size: 20px;
+    }
+    .box-form {
+        width: 100%;
+    }
 }
