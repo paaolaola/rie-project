@@ -36,9 +36,6 @@ body {
 .message-error {
     color: tomato;
 }
-.message-form {
-    color: green;
-}
 
 /*responsive*/
 @media screen and (min-width: 996px) and (max-width: 1080px) {

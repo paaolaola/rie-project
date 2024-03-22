@@ -124,12 +124,19 @@ function showServices(services) {
 }
 
 /*función de los botones agregar*/
-
 function AddToCartEvent() {
     const addToCartBtn = document.querySelectorAll(".btn-services");
     addToCartBtn.forEach((btn) => {
         btn.addEventListener("click", handleAddToCart);
     });
+}
+/*función para el clic del botón de la card "agregar" */
+function handleAddToCart(e) {
+    const card = e.target.closest(".card");
+    const serviceName = card.querySelector(".name-service").innerHTML;
+    const service = arrServices.find((service) => service.name === serviceName);
+
+    addToCart(service);
 }
 
 /*función para ignorar acentos en la busqueda*/
@@ -180,7 +187,7 @@ function addToCart(service) {
         /*actualiza la cantidad */
         cart[quantityService].quantity++;
     } else {
-        /*o lo agrega*/
+        /*o agrega*/
         cart.push({ ...service, quantity: 1 });
     }
     /*toastify para el boton agregar*/
@@ -188,7 +195,7 @@ function addToCart(service) {
         text: "Agregado al carro!",
         duration: 3000,
         gravity: "top",
-
+        position: "center",
         style: {
             background: "linear-gradient(to right, #eaeaea, #00b4d8)",
             color: "#03045e",
@@ -282,23 +289,13 @@ function updateCart() {
 }
 
 /*evento del boton "agregar" a la card*/
-
-const addToCartBtn = document.querySelectorAll(".btn-services");
-addToCartBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        /*agregar toast*/
-        Toastify({
-            text: "Producto agregado al carrito",
-            duration: 3000,
-        }).showToast();
-    });
-});
-
-/*función para el clic del botón de la card "agregar" */
-function handleAddToCart(e) {
-    const card = e.target.closest(".card");
-    const serviceName = card.querySelector(".name-service").innerHTML;
-    const service = arrServices.find((service) => service.name === serviceName);
-
-    addToCart(service);
-}
+// const addToCartBtn = document.querySelectorAll(".btn-services");
+// addToCartBtn.forEach((btn) => {
+//     btn.addEventListener("click", () => {
+//         /*agregar toast*/
+//         Toastify({
+//             text: "Producto agregado al carrito",
+//             duration: 3000,
+//         }).showToast();
+//     });
+// });
