@@ -10,7 +10,9 @@ body {
     min-height: 100vh;
     color: #03045e;
 }
-
+h1 {
+    font-size: 20px;
+}
 h2 {
     font-size: 15px;
     font-weight: 500;
@@ -221,7 +223,7 @@ nav {
 /*sección cuatro*/
 .message-section {
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 400;
     color: #03045e;
     text-align: center;
     font-style: oblique;
@@ -266,17 +268,23 @@ footer {
     }
     .location {
         margin-top: 2rem;
-        font-size: 12px;
     }
     h3 {
         padding: 0 1.5rem;
     }
-    h1 {
-        font-size: 16px;
+
+    .location {
+        margin-top: 2rem;
+    }
+    .location svg {
+        margin: 0 5px 10px 0;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 996px) {
+    h1 {
+        font-size: 25px;
+    }
     .logo {
         width: 150px;
     }
@@ -291,7 +299,6 @@ footer {
     }
     .section-all {
         flex-direction: column;
-
         align-items: center;
         justify-content: space-between;
     }
@@ -305,13 +312,19 @@ footer {
         padding: 2rem;
         flex-wrap: wrap;
     }
+    .location {
+        margin-top: 2rem;
+    }
+    .location svg {
+        margin: 0 5px 10px 0;
+    }
 }
 @media screen and (min-width: 280px) and (max-width: 768px) {
     h1 {
-        font-size: 15px;
+        font-size: 20px;
     }
     h3 {
-        padding: 1rem;
+        padding: 0 1rem;
     }
     .top-header-area {
         padding: 1rem;

@@ -54,8 +54,6 @@ nav {
     display: flex;
     align-items: center;
     font-weight: 500;
-    margin: 0;
-    padding: 0;
 }
 .li-class {
     font-family: "Work Sans Variable", sans-serif;
