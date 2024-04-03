@@ -1,4 +1,4 @@
-/*método random para imágenes del background*/
+/*método random para imágenes background*/
 const backgrounds = ["02.jpg", "03.jpg", "04.jpg", "05.jpg"];
 
 function changeBackground() {
@@ -15,16 +15,16 @@ window.onload = () => {
 
 /*evento del boton y preventdefault*/
 document.getElementById("loginForm").addEventListener("submit", (e) => {
-    e.preventDefault(); /*impido recarga del form*/
+    e.preventDefault(); /*impido la recarga del form*/
 
     const user = document.getElementById("username").value;
     const pass = document.getElementById("password").value;
 
     function checkLogin(username, password) {
-        /*para obtener la pass almacenadas*/
+        /*para obtener la pass almacenada*/
         let storedPass = localStorage.getItem(username);
 
-        /*compruebo las pass*/
+        /*compruebo la pass*/
         if (password === storedPass) {
             return true; //
         } else {
@@ -38,7 +38,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
     } else if (user === "" || pass === "") {
         document.getElementById("message-error").innerHTML = "Por favor, completa los campos.";
     } else {
-        /*verifico si se puede iniciar sesión*/
+        /*verifico si se puede iniciar sesión con el sweetAlert*/
         if (checkLogin(user, pass)) {
             Swal.fire({
                 title: "¡Inicio de sesión exitoso!",
@@ -47,18 +47,18 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
                 confirmButtonText: "OK",
             });
 
-            /* settime para redirigir al home */
+            /* setTime para redirigir al home */
             setTimeout(() => {
                 window.location.href = "home.html";
             }, 1000);
 
-            /*para traerse la pass segun el checkbox*/
+            /*para traerse los datos segun el checkbox*/
             if (check.checked) {
                 localStorage.setItem("check", "true");
                 localStorage.setItem("username", user);
                 localStorage.setItem("password", pass);
             } else {
-                /*o elimina la pass*/
+                /*o elimina los datos*/
                 localStorage.removeItem("check");
                 localStorage.removeItem("username");
                 localStorage.removeItem("password");
@@ -69,7 +69,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
     }
 });
 
-/*validación del checkbox*/
+/*validación del input checkbox*/
 document.addEventListener("DOMContentLoaded", () => {
     const savedUser = localStorage.getItem("username");
     const savedPass = localStorage.getItem("password");

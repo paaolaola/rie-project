@@ -30,5 +30,17 @@ let logOut = document.getElementById("btnSession");
 logOut.addEventListener("click", (e) => {
     e.preventDefault();
 
-    window.location.href = "index.html";
+    if (logOut) {
+        Swal.fire({
+            title: "Cerraste sesión!",
+            icon: "success",
+            confirmButtonColor: "#00b4d8",
+            confirmButtonText: "OK",
+        });
+    }
+
+    /* setTime para redirigir al login */
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1000);
 });

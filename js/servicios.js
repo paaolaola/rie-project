@@ -121,6 +121,7 @@ function showServices(services) {
         .join("");
 
     document.querySelector(".container-card").innerHTML = servicesDom;
+    AddToCartEvent();
 }
 
 /*función de los botones agregar*/
@@ -140,8 +141,8 @@ function handleAddToCart(e) {
 }
 
 /*BARRA DE BÚSQUEDA*/
-/*función para ignorar acentos en la busqueda*/
-function removeAccents(text) {
+/*función para ignorar acentos en la búsqueda*/
+function removeAcnts(text) {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
@@ -149,15 +150,14 @@ function removeAccents(text) {
 function handleSearch(e) {
     e.preventDefault();
 
-    const searchTerm = removeAccents(document.getElementById("searchInput").value.toLowerCase());
+    const searchTerm = removeAcnts(document.getElementById("searchInput").value.toLowerCase());
 
     const servicesFilter = arrServices.filter((service) => {
-        const serviceName = removeAccents(service.name.toLowerCase());
+        const serviceName = removeAcnts(service.name.toLowerCase());
         return serviceName.includes(searchTerm);
     });
 
     showServices(servicesFilter);
-    AddToCartEvent();
 }
 
 /*función para el input de la barra de búsqueda*/
@@ -170,7 +170,6 @@ function handleInput(e) {
 
 document.getElementById("searchForm").addEventListener("submit", handleSearch);
 document.getElementById("searchInput").addEventListener("input", handleInput);
-
 showServices(arrServices);
 AddToCartEvent();
 
@@ -252,7 +251,7 @@ function removeCart(serviceId) {
                 borderRadius: "10px",
             },
         }).showToast();
-
+        /*toastify para cuando el carro quede en 0*/
         if (cart.length === 0) {
             Swal.fire({
                 title: "¡Tu carro de compras ha sido eliminado!",
@@ -335,7 +334,7 @@ function updateCart() {
     });
 
     /*actualizo el precio total*/
-    totalPriceService.innerHTML = totalPrice;
+    totalPriceService.innerHTML = `$${totalPrice}`;
     TrashEvent();
 }
 
@@ -345,7 +344,19 @@ let logOut = document.getElementById("btnSession");
 logOut.addEventListener("click", (e) => {
     e.preventDefault();
 
-    window.location.href = "index.html";
+    if (logOut) {
+        Swal.fire({
+            title: "Cerraste sesión!",
+            icon: "success",
+            confirmButtonColor: "#00b4d8",
+            confirmButtonText: "OK",
+        });
+    }
+
+    /* setTime para redirigir al login */
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1000);
 });
 
 /*logica para guardar el carrito en el LS*/

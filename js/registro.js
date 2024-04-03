@@ -68,7 +68,7 @@ document.getElementById("registForm").addEventListener("submit", (e) => {
         if (pass.length <= 6 || !isUpperCase || !isNumber) {
             document.getElementById("message-error").innerHTML = "La contraseña debe tener 6 o más caracteres, al menos una mayúscula y un número.";
         } else {
-            // ver si el usuario se registró
+            /*ver si el usuario ya está registrado*/
             if (localStorage.getItem(user) !== null) {
                 document.getElementById("message-error").innerHTML = "El nombre de usuario ya está en uso.";
             } else {
@@ -79,7 +79,7 @@ document.getElementById("registForm").addEventListener("submit", (e) => {
                     confirmButtonText: "OK",
                 });
 
-                /* settime para redirir al index */
+                /*setTime para redirir al index*/
                 setTimeout(() => {
                     window.location.href = "index.html";
                 }, 1000);

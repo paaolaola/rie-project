@@ -44,11 +44,16 @@ h3 {
 }
 .btn-session {
     width: 150px;
-    background: #00b4d8;
+    height: 35px;
+    background: #03045e;
+    color: #00b4d8;
+    border-radius: 5px;
     border-style: none;
+    margin: 30px;
+    padding: 5px;
 }
 .btn-session:hover {
-    text-shadow: 0px 0px 10px #eaeaea;
+    text-shadow: 0px 0px 10px #00b4d8;
 }
 
 /*navbar*/
@@ -291,14 +296,12 @@ footer {
 @media screen and (min-width: 280px) and (max-width: 768px) {
     .text-top {
         font-size: 10px;
-        margin: 0px;
+        margin: 4px;
     }
     .btn-session {
-        width: 80px;
-        font-size: 9px;
-        text-align: end;
-        padding-right: 0rem;
-        margin-right: 10px;
+        width: 100px;
+        margin: 10px;
+        font-size: 10px;
     }
     .top-header {
         margin: auto 1rem;
