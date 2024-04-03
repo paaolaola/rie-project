@@ -1,23 +1,23 @@
 /*interacción de las vistas*/
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     let viewLogin = document.querySelectorAll(".viewLogin");
     let viewServices = document.querySelectorAll(".viewServices");
     let viewHome = document.querySelectorAll(".viewHome");
 
-    viewLogin.forEach(function (button) {
-        button.addEventListener("click", function () {
+    viewLogin.forEach((button) => {
+        button.addEventListener("click", () => {
             window.location.href = "index.html";
         });
     });
 
-    viewServices.forEach(function (button) {
-        button.addEventListener("click", function () {
+    viewServices.forEach((button) => {
+        button.addEventListener("click", () => {
             window.location.href = "servicios.html";
         });
     });
 
-    viewHome.forEach(function (button) {
-        button.addEventListener("click", function () {
+    viewHome.forEach((button) => {
+        button.addEventListener("click", () => {
             window.location.href = "home.html";
         });
     });
@@ -130,7 +130,7 @@ function AddToCartEvent() {
         btn.addEventListener("click", handleAddToCart);
     });
 }
-/*función para el clic del botón de la card "agregar" */
+/*función para el clic del botón "agregar" */
 function handleAddToCart(e) {
     const card = e.target.closest(".card");
     const serviceName = card.querySelector(".name-service").innerHTML;
@@ -139,6 +139,7 @@ function handleAddToCart(e) {
     addToCart(service);
 }
 
+/*BARRA DE BÚSQUEDA*/
 /*función para ignorar acentos en la busqueda*/
 function removeAccents(text) {
     return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -174,9 +175,8 @@ showServices(arrServices);
 AddToCartEvent();
 
 /*CARRITO DE COMPRAS*/
-
 /*array para el carrito vacío*/
-const cart = [];
+let cart = [];
 
 /*función para agregar los servicios */
 function addToCart(service) {
@@ -192,18 +192,18 @@ function addToCart(service) {
     }
     /*toastify para el boton agregar*/
     Toastify({
-        text: "Agregado al carro!",
-        duration: 3000,
+        text: "Servicio agregado!",
+        duration: 2000,
         gravity: "top",
         position: "center",
         style: {
             background: "linear-gradient(to right, #eaeaea, #00b4d8)",
             color: "#03045e",
             borderRadius: "10px",
-            border: "1px solid #03045e",
         },
     }).showToast();
     updateCart();
+    saveCartLS();
 }
 
 /*evento del botón "finalizar compra"*/
@@ -228,13 +228,60 @@ finishBtn.addEventListener("click", () => {
 
     cart.length = 0;
     updateCart();
+    saveCartLS(); /*actualizo el carrito al hacer click en finalizar compra*/
 });
+
+/*función para borrar un servicio del carrito y uso de toastify*/
+function removeCart(serviceId) {
+    const index = cart.findIndex((item) => item.id === serviceId);
+    if (index !== -1) {
+        if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+        } else {
+            cart.splice(index, 1);
+        }
+        /*toastify para el boton eliminar*/
+        Toastify({
+            text: "Servicio eliminado!",
+            duration: 2000,
+            gravity: "top",
+            position: "center",
+            style: {
+                background: "linear-gradient(to right, tomato, white)",
+                color: "#03045e",
+                borderRadius: "10px",
+            },
+        }).showToast();
+
+        if (cart.length === 0) {
+            Swal.fire({
+                title: "¡Tu carro de compras ha sido eliminado!",
+                icon: "success",
+                confirmButtonColor: "#00b4d8",
+                confirmButtonText: "OK",
+            });
+        }
+
+        updateCart();
+    }
+    saveCartLS();
+}
+/* evento para el ícono de la papelera */
+function TrashEvent() {
+    const trashIcons = document.querySelectorAll("#trash");
+    trashIcons.forEach((icon, index) => {
+        icon.addEventListener("click", () => {
+            removeCart(cart[index].id);
+        });
+    });
+}
+loadCartLS();
 
 /*evento del botón "borrar carrito"*/
 const removeBtn = document.getElementById("btnRemove");
 removeBtn.addEventListener("click", () => {
     if (cart.length >= 1) {
-        /*sweetalert para aviso de carro vacío o servicios eliminados*/
+        /*sweetalert para aviso de carrito vacío*/
         Swal.fire({
             title: "¡Tu carro de compras ha sido eliminado!",
             icon: "success",
@@ -252,6 +299,7 @@ removeBtn.addEventListener("click", () => {
 
     cart.length = 0;
     updateCart();
+    saveCartLS();
 });
 
 /*función para actualizar el carrito*/
@@ -275,10 +323,12 @@ function updateCart() {
         const serviceItem = `<li class="list-group-item list-group-service">${service.name}</li>`;
         serviceList.innerHTML += serviceItem;
 
-        const quantityItem = `<li class="list-group-item">${service.quantity}</li>`;
+        const quantityItem = `<li class="list-group-item flex-container">${service.quantity}<svg id="trash" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="tomato" class="bi bi-trash3" viewBox="0 0 18 20">
+        <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"/>
+      </svg></li>`;
         quantityList.innerHTML += quantityItem;
 
-        const priceItem = `<li class="list-group-item">${service.price}</li>`;
+        const priceItem = `<li class="list-group-item">$ ${service.price}</li>`;
         priceList.innerHTML += priceItem;
 
         totalPrice += parseInt(service.price) * service.quantity;
@@ -286,16 +336,27 @@ function updateCart() {
 
     /*actualizo el precio total*/
     totalPriceService.innerHTML = totalPrice;
+    TrashEvent();
 }
 
-/*evento del boton "agregar" a la card*/
-// const addToCartBtn = document.querySelectorAll(".btn-services");
-// addToCartBtn.forEach((btn) => {
-//     btn.addEventListener("click", () => {
-//         /*agregar toast*/
-//         Toastify({
-//             text: "Producto agregado al carrito",
-//             duration: 3000,
-//         }).showToast();
-//     });
-// });
+/*lógica para cierre de sesión*/
+let logOut = document.getElementById("btnSession");
+
+logOut.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.location.href = "index.html";
+});
+
+/*logica para guardar el carrito en el LS*/
+function saveCartLS() {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+function loadCartLS() {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCart();
+    }
+}

@@ -1,23 +1,23 @@
 /*interacción de las vistas*/
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     let viewLogin = document.querySelectorAll(".viewLogin");
     let viewServices = document.querySelectorAll(".viewServices");
     let viewHome = document.querySelectorAll(".viewHome");
 
-    viewLogin.forEach(function (btn) {
-        btn.addEventListener("click", function () {
+    viewLogin.forEach((btn) => {
+        btn.addEventListener("click", () => {
             window.location.href = "index.html";
         });
     });
 
-    viewServices.forEach(function (btn) {
-        btn.addEventListener("click", function () {
+    viewServices.forEach((btn) => {
+        btn.addEventListener("click", () => {
             window.location.href = "servicios.html";
         });
     });
 
-    viewHome.forEach(function (btn) {
-        btn.addEventListener("click", function () {
+    viewHome.forEach((btn) => {
+        btn.addEventListener("click", () => {
             window.location.href = "home.html";
         });
     });
@@ -31,13 +31,13 @@ function changeBackground() {
     document.body.style.backgroundImage = `url('./public/img/${backgrounds[random]}')`;
 }
 /*para manipular cambio de fondo cada 5 segundos*/
-window.onload = function () {
+window.onload = () => {
     changeBackground();
     setInterval(changeBackground, 5000);
 };
 
 /*evento del boton y preventdefault*/
-document.getElementById("registForm").addEventListener("submit", function (e) {
+document.getElementById("registForm").addEventListener("submit", (e) => {
     e.preventDefault(); /*impide recarga del form*/
 
     const user = document.getElementById("username").value;
@@ -50,10 +50,10 @@ document.getElementById("registForm").addEventListener("submit", function (e) {
         document.getElementById("message-error").innerHTML = "Por favor, completa todos los campos.";
     } else {
         /*validación caracteres pass*/
-        var isUpperCase = false;
-        var isNumber = false;
+        let isUpperCase = false;
+        let isNumber = false;
 
-        pass.split("").forEach(function (character) {
+        pass.split("").forEach((character) => {
             if (character >= "A" && character <= "Z") {
                 isUpperCase = true;
             } else if (!isNaN(parseInt(character))) {
@@ -80,7 +80,7 @@ document.getElementById("registForm").addEventListener("submit", function (e) {
                 });
 
                 /* settime para redirir al index */
-                setTimeout(function () {
+                setTimeout(() => {
                     window.location.href = "index.html";
                 }, 1000);
 

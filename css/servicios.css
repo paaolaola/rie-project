@@ -23,10 +23,16 @@ h3 {
 .top-header-area {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: #00b4d8;
     color: #eaeaea;
     height: 3rem;
+}
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
 }
 .text-top {
     font-size: 16px;
@@ -35,6 +41,14 @@ h3 {
     font-weight: 400;
     margin: 0.5rem;
     padding-right: 2rem;
+}
+.btn-session {
+    width: 150px;
+    background: #00b4d8;
+    border-style: none;
+}
+.btn-session:hover {
+    text-shadow: 0px 0px 10px #eaeaea;
 }
 
 /*navbar*/
@@ -127,8 +141,8 @@ nav {
 
 .card {
     display: flex;
-    flex-direction: column; /* Alinear el contenido verticalmente */
-    justify-content: space-between; /* Espaciar el contenido verticalmente */
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     width: 300px;
     margin: 1.5rem;
@@ -213,6 +227,14 @@ nav {
 .btn-finalize:hover {
     transform: scale(1.1);
 }
+.bi {
+    cursor: pointer;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 /*footer*/
 footer {
     display: flex;
@@ -267,16 +289,19 @@ footer {
     }
 }
 @media screen and (min-width: 280px) and (max-width: 768px) {
-    .top-header-area {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-    }
     .text-top {
         font-size: 10px;
-        text-align: center;
-        padding: 5px;
+        margin: 0px;
+    }
+    .btn-session {
+        width: 80px;
+        font-size: 9px;
+        text-align: end;
+        padding-right: 0rem;
+        margin-right: 10px;
+    }
+    .top-header {
+        margin: auto 1rem;
     }
 
     nav {

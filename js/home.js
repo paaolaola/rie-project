@@ -1,25 +1,34 @@
 /*interacción de las vistas*/
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
     let viewLogin = document.querySelectorAll(".viewLogin");
     let viewServices = document.querySelectorAll(".viewServices");
     let viewHome = document.querySelectorAll(".viewHome");
 
-    viewLogin.forEach(function (button) {
-        button.addEventListener("click", function () {
+    viewLogin.forEach((button) => {
+        button.addEventListener("click", () => {
             window.location.href = "index.html";
         });
     });
 
-    viewServices.forEach(function (button) {
-        button.addEventListener("click", function () {
+    viewServices.forEach((button) => {
+        button.addEventListener("click", () => {
             window.location.href = "servicios.html";
         });
     });
 
-    viewHome.forEach(function (button) {
-        button.addEventListener("click", function () {
+    viewHome.forEach((button) => {
+        button.addEventListener("click", () => {
             window.location.href = "home.html";
         });
     });
+});
+
+/*lógica para cierre de sesión*/
+let logOut = document.getElementById("btnSession");
+
+logOut.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    window.location.href = "index.html";
 });
