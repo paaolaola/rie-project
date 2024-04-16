@@ -7,19 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     viewLogin.forEach((button) => {
         button.addEventListener("click", () => {
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
         });
     });
 
     viewServices.forEach((button) => {
         button.addEventListener("click", () => {
-            window.location.href = "servicios.html";
+            window.location.href = "/pages/servicios.html";
         });
     });
 
     viewHome.forEach((button) => {
         button.addEventListener("click", () => {
-            window.location.href = "home.html";
+            window.location.href = "/pages/home.html";
         });
     });
 });
@@ -41,6 +41,6 @@ logOut.addEventListener("click", (e) => {
 
     /* setTime para redirigir al login */
     setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "/index.html";
     }, 1000);
 });
