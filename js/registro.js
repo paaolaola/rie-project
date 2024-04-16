@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     viewLogin.forEach((btn) => {
         btn.addEventListener("click", () => {
-            window.location.href = "index.html";
+            window.location.href = "/index.html";
         });
     });
 
