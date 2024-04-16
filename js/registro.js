@@ -81,7 +81,7 @@ document.getElementById("registForm").addEventListener("submit", (e) => {
 
                 /*setTime para redirir al index*/
                 setTimeout(() => {
-                    window.location.href = "index.html";
+                    window.location.href = "/index.html";
                 }, 1000);
 
                 /*guardo datos en localStorage*/
