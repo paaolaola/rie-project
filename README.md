@@ -10,7 +10,7 @@ Al descargar el repositorio, debes obtener las dependencias con el comando "npm 
 
 #### Sitio web:
 
-https://paaolaola.github.io/rie-project/
+[https://paaolaola.github.io/rie-project/](https://rieclinicadental.netlify.app/)
 
 Los datos son almacenados desde el LocalStorage. No hay bases de datos de por medio. Puedes ingresar registrandote aquí:
 https://rieclinicadental.netlify.app/pages/registro
